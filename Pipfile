@@ -12,6 +12,7 @@ seaborn = "*"
 opencv-python = "*"
 scikit-image = "*"
 geopy = "*"
+python-dotenv = "*"
 
 [dev-packages]
 black = "*"
