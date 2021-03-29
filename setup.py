@@ -29,6 +29,6 @@ setup(
     ],
     extras_require={"dev": ["black", "ipykernel", "pylint"]},
     entry_points={
-        "console_scripts": ["geoheatmap=src.cli:cli"],
+        "console_scripts": ["geoheatmap=src.cli:main"],
     },
 )

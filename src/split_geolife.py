@@ -1,11 +1,11 @@
+"""split_geolife.py
+Split GeoLife dataset into one CSV file per user per month
+"""
 import os
 from pathlib import Path
 from itertools import repeat
 from multiprocessing import Pool
-
-
-INPUT_DIR = Path(os.getenv("GEOLIFE_DATA_DIR"))
-OUTPUT_DIR = INPUT_DIR / "user_by_month"
+import dotenv
 
 
 def split_trajectory(trajectory):
@@ -54,13 +54,15 @@ def process_one_user(user_dir, output_dir):
             f.write("\n".join(rows) + "\n")
 
 
-def main():
-    output_dir = OUTPUT_DIR
+def split_user_months(input_dir, output_dir):
     output_dir.mkdir(exist_ok=True)
-    user_dirs = Path(INPUT_DIR).glob("*")
+    user_dirs = Path(input_dir).glob("*")
     with Pool(os.cpu_count() // 2) as p:
         p.starmap(process_one_user, zip(user_dirs, repeat(output_dir)))
 
 
 if __name__ == "__main__":
-    main()
+    dotenv.load_dotenv()
+    INPUT_DIR = Path(os.getenv("GEOLIFE_DATA_DIR"))
+    OUTPUT_DIR = INPUT_DIR / "user_by_month"
+    split_user_months(INPUT_DIR, OUTPUT_DIR)
