@@ -1,6 +1,4 @@
-import heatmap as hp
-import preprocess as pre
-import frequency as fre
+from src import heatmap as hp, preprocess as pre, frequency as fre
 import os
 from pathlib import Path
 import sys

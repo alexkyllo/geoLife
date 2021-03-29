@@ -1,5 +1,4 @@
-import preprocess as pre
-import frequency as fre
+from src import preprocess as pre, frequency as fre
 import os
 from pathlib import Path
 import sys

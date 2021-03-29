@@ -20,6 +20,7 @@ geolife = {editable = true, path = "."}
 black = "*"
 pylint = "*"
 ipykernel = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.8"

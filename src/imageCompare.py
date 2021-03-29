@@ -4,7 +4,7 @@ from PIL import Image
 import skimage.metrics as ski
 import os
 from pathlib import Path
-import preprocess as pre
+from src import preprocess as pre
 
 
 def ssimImage(df):

@@ -8,7 +8,7 @@ import math
 
 # TODO: importCSV methods
 # import importCSV as csv
-import preprocess as pre
+from src import preprocess as pre
 
 
 def setMap(boundingBox, cell_size):

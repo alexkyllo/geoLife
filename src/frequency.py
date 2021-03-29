@@ -1,7 +1,7 @@
 import pandas as pd
 from PIL import Image
 import glob
-import heatmap as hp
+from src import heatmap as hp
 import os
 
 ##################################################
