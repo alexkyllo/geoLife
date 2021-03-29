@@ -13,6 +13,8 @@ opencv-python = "*"
 scikit-image = "*"
 geopy = "*"
 python-dotenv = "*"
+click = "*"
+geolife = {editable = true, path = "."}
 
 [dev-packages]
 black = "*"
